@@ -49,18 +49,19 @@ dbus-update-activation-environment --all
 export NO_AT_BRIDGE=1
 
 # ----------------------- configure My dual monitor --------------------
-# You should NOT do this!
-# just for my case: dual monitor. 
+
+# You May NO need do this! This segment can be removed!
+# just for my case: my dual monitor. 
 
 xrandr --output HDMI-0 --primary --left-of DVI-I-1
 
 # --------------------- input method ----------------------------------
 
-# NOT necessary for you.
-# For my case, I use Chinese input method ibus-rime.
-# https://wiki.archlinux.org/title/IBus
+# You May NO need do this! This segment can be removed!
+# For my case, I use Chinese input method: ibus-rime.
 
-# 1. Set IBus environment variables. 
+# https://wiki.archlinux.org/title/IBus
+# Set IBus environment variables. 
 # Or add those variables into file `/etc/environment`.
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
@@ -101,26 +102,6 @@ export LC_TIME=en_US.utf8
 # The locale set for this variable will always override LANG and all
 # the other LC_* variables, whether they are set or not.
 export LC_ALL=en_US.utf8
-
-# --------------------------- mount ------------------------------------
-
-# You should NOT do this!
-
-if [ -d "/home/bing/OneDrive" ] 
-then
-    echo "OneDrive has mounted" 
-else
-    echo "start to mount OneDrive."
-    #sudo mount 192.168.1.6:/volume1/OneDrive /home/bing/OneDrive
-fi
-
-if [ -d "/home/bing/Media" ] 
-then
-    echo "OneDrive has mounted" 
-else
-    echo "start to mount Media."
-    #sudo mount 192.168.1.6:/volume2/Media /home/bing/Media
-fi
 
 # ----------------------- Gnome Keyring -------------------------------
 
