@@ -64,7 +64,7 @@ This [thread](See: https://web.archive.org/web/20060926032424/http://fvwm.lair.b
 - [Youtube: Obscure Window Manager Project - FVWM](https://www.youtube.com/watch?v=HHYXBdOgUrI)
 - https://zensites.net/fvwm/guide/index.html
 
-## Part III:: Switch from Gnome to Fvwm permanently
+## Part III: Switch from Gnome to Fvwm permanently
 
 1.Disable Gdm
 
