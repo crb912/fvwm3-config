@@ -7,6 +7,13 @@ I use fvwm 3.1.0.4 vesion.
 
 Install the [FVWM3](https://github.com/fvwmorg/fvwm3/blob/master/dev-docs/INSTALL.md) package.
 
+#### Build your `~/.xinitrc` file
+
+The xinit program allows a user to manually start an Xorg display server.  
+
+More details: https://wiki.archlinux.org/title/Xinit
+
+My `~/.xinitrc` is [here](https://github.com/crb912/fvwm3-config/blob/main/.xinitrc).
 
 #### Test and Try basic fvwm configuration
 
@@ -20,24 +27,16 @@ sudo chown -R someuser ~/.fvwm
 
 sudo rm -r /usr/local/share/fvwm3/default-config
 ```
-#### Build your `~/.xinitrc` file
 
-The xinit program allows a user to manually start an Xorg display server.  
-
-More details: https://wiki.archlinux.org/title/Xinit
-
-My `~/.xinitrc` is [here](https://github.com/crb912/fvwm3-config/blob/main/.xinitrc).
-
-#### Disable Ubuntu GDM3 and start X
-
-if are running ubuntu with GNONE, must logout gnome-display-manager.
+If your are running Ubuntu with GNONE, must logout gnome-display-manager.
 Logout current Ubuntu session, and `Ctrl + Alt + F2`. Then:
 
 
 ```shell
+# Disable Ubuntu GDM3 and
 sudo service gdm3 stop
 
-
+#  start X
 startx
 ```
 
