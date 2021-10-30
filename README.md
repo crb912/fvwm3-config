@@ -1,7 +1,8 @@
 # FVWM on Ubuntu 21.04
-[FVWM](https://www.fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. 
 
-I use fvwm 3.1.0.4 vesion.
+I'm tired of the endless bugs and updates of the GNOME desktop. Therefore, I switched to FWVM and no longer use Ubuntu's default GNOME desktop.
+
+[FVWM](https://www.fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. 
 
 ## Part I: Install fvwm and quick start
 
