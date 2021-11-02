@@ -64,7 +64,8 @@ This [thread](See: https://web.archive.org/web/20060926032424/http://fvwm.lair.b
 
 - https://wiki.archlinux.org/title/FVWM
 - Some discuss in [ArchLabsLinux/fvwm3](https://forum.archlabslinux.com/t/fvwm3/5079/5)
-- Build Taskbar: https://www.fvwm.org/Wiki/Panels/FvwmTaskBar/,  
+- Build Taskbar: https://www.fvwm.org/Wiki/Panels/FvwmTaskBar/
+- [FVWM Old School Linux Window Manager](http://tomhayden3.com/2014/05/03/fvwm/)
 - [Youtube: Obscure Window Manager Project - FVWM](https://www.youtube.com/watch?v=HHYXBdOgUrI)
 - https://zensites.net/fvwm/guide/index.html
 
