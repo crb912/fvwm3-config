@@ -25,7 +25,7 @@ End
 
 Widget 1
 Property
- Position 5 0
+ Position 0 0
  Size 50 24
  Font "xft:Sans:style=Bold:size=11"
  Type ItemDraw

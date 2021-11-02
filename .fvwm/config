@@ -7,7 +7,6 @@ ImagePath $[FVWM_USERDIR]/images:+
 # The variable can then be used in the configuration as $[infostore.name].
 
 InfoStoreAdd terminal xterm
-InfoStoreAdd gnome_terminal gnome-terminal
 
 # This is used for "Run Command" and the Meta+Space key-binding.
 # runcmd is the binary name and runcmdopt contains additional
@@ -16,6 +15,7 @@ InfoStoreAdd runcmd "dmenu_run"
 InfoStoreAdd runcmdopt "-nb '#2b4e5e'"
 
 DesktopConfiguration global
+
 
 # ---------------------------------------------------------------------
 
@@ -408,8 +408,10 @@ AddToMenu   MenuFvwmManPages "Help" Title
 + "fvwm-config"         ViewManPage fvwm-config
 
 #--------------- Mouse and Key bindings -------------------------------
+# -------- Key
 
-# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.
+# Alt-F1 or Menu to load the root menu
+# Alt-Tab for a WindowList.
 # Ctrl-F1/F2  will switch between the Virtual Desktops.
 # Super_R (windows key) will launch a terminal.
 # Alt-Space to launch dmenu (Note: dmenu must be present in the system)
@@ -420,9 +422,12 @@ Silent Key Menu A A Menu MenuFvwmRoot
 Silent Key Tab A M WindowList Root c c NoDeskSort, NoGeometry, SelectOnRelease Meta_L
 Silent Key F1 A C GotoDesk 0 0
 Silent Key F2 A C GotoDesk 0 1
-Silent Key Super_L A A Exec exec $[infostore.gnome_terminal]
 Silent Key Super_R A A Exec exec $[infostore.terminal]
 Test (x $[infostore.runcmd]) Silent Key Space A M Exec exec $[infostore.runcmd] $[infostore.runcmdopt]
+
+
+
+# -------- Mouse
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
@@ -546,7 +551,7 @@ DestroyModuleConfig FvwmScript:*
 InfoStoreAdd panel_height 24
 InfoStoreAdd meau_width 55
 InfoStoreAdd button_width 25
-InfoStoreAdd tasktime_width 85
+InfoStoreAdd tasktime_width 140
 
 DestroyModuleConfig MyBottomPanel:*
 *MyBottomPanel: Geometry 1920x$[infostore.panel_height]+0-0
@@ -560,7 +565,7 @@ DestroyModuleConfig MyBottomPanel:*
                Menu StartupMenu Root 0 o100-24p, Frame 2)
 # Quick Launch Buttons
 *MyBottomPanel: ($[infostore.button_width]x1, Icon "icons/18x18/terminal.png", ActiveColorset 16, \
-               Action(Mouse 1) "Exec exec gnome-terminal")
+               Action(Mouse 1) "Exec exec $[infostore.terminal] -geometry +750-200")
 *MyBottomPanel: ($[infostore.button_width]x1, Icon "icons/18x18/chrome.png", ActiveColorset 16, \
                Action(Mouse 1) "Exec exec google-chrome-stable")
 *MyBottomPanel: ($[infostore.button_width]x1, Icon "icons/18x18/mendeley.png", ActiveColorset 16, \
@@ -571,17 +576,14 @@ DestroyModuleConfig MyBottomPanel:*
                Action(Mouse 1) "Exec exec /opt/jetbrains/jetbrains-toolbox")
 *MyBottomPanel: ($[infostore.button_width]x1, Icon "icons/18x18/email.png", ActiveColorset 16, \
                Action(Mouse 1) "Exec exec thunderbird")
-# Swallow FvwmIconMan TaskBarIcons: 1920 - 25*6 - 55*2 = 1660
-*MyBottomPanel: (1685x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan \
+# Swallow FvwmIconMan TaskBarIcons: 1920 - 55 - 25*6 - 140 = 1575
+*MyBottomPanel: (1575x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan \
                TaskBarIcons')
 # audio. `sudo apt-get install pavucontrol`, I use `pavucontrol` control volume.
 *MyBottomPanel: ($[infostore.button_width]x1, Icon "icons/18x18/audio.png", ActiveColorset 16, \
                Action(Mouse 1) "Exec exec pavucontrol")
 # DateTime Button, 5 + 50(Time) + 5 + 75 (Date) + 5 = 140
-# JustDate Button, 5 + 75 (Date) + 5 = 85
-# I don't need time, I just need Date. so I use FvwmScript-JustDate.
-# You can choose script: FvwmScript-DateTime
-*MyBottomPanel: ($[infostore.tasktime_width]x1, Swallow DateTime 'Module FvwmScript scripts/FvwmScript-JustDate',\
+*MyBottomPanel: ($[infostore.tasktime_width]x1, Swallow DateTime 'Module FvwmScript scripts/FvwmScript-DateTime',\
     ActiveColorset 16, Frame 0)
 
 # ---------------------------------------------------------------------#
